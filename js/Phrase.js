@@ -39,9 +39,9 @@ class Phrase {
    */
   showMatchedLetter(letter) {
     const matchedLetter = document.querySelectorAll(`.${letter}`);
-
     matchedLetter.forEach((letter) => {
       letter.classList.remove("hide");
+      letter.classList.add("animate");
       letter.classList.add("show");
     });
   }

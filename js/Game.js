@@ -58,6 +58,19 @@ class Game {
   }
 
   /**
+   * delays gameOver() call to allow
+   * the final animation to finish
+   */
+  gameOverDelay() {
+    setTimeout(
+      function () {
+        this.gameOver(true);
+      }.bind(this),
+      1000
+    );
+  }
+
+  /**
    * Handles onscreen keyboard button clicks
    * @param (HTMLButtonElement) button - The clicked button element
    */
@@ -69,7 +82,8 @@ class Game {
       pressedKey.classList.add("chosen");
       game.activePhrase.showMatchedLetter(letter);
       if (this.checkForWin()) {
-        this.gameOver(true);
+        //delayed gameOver() call
+        this.gameOverDelay();
       }
     } else {
       pressedKey.classList.add("wrong");
@@ -101,7 +115,6 @@ class Game {
     for (let x = 0; x < phraseLi.length; x++) {
       if (phraseLi[x].classList.contains("hide")) {
         hidden++;
-        console.log(hidden);
       }
     }
     if (hidden === 0) {
