@@ -4,7 +4,7 @@ JavaScript browser-based, word guessing game: "Phrase Hunter.", which incorparat
 
 
 ### Extra Credit
-* Event listener added on "keydown"
+* Event listener added on *keydown*
   - **break** statement added in app.js on line 19 in the event the wrong key was pressed twice
 
 * App styles have been personalized
