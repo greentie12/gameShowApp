@@ -9,5 +9,5 @@ JavaScript browser-based, word guessing game: "Phrase Hunter.", which incorparat
 
 * App styles have been personalized
   - _@keyframes_ added in the CSS file on line 35
-  - animation called on the `<li>` on line 62
-  - animate class added dynamically in Phrase.js file on line 45
+  - _animation_ called on the `<li>` on line 62
+  - `<animate>` class added dynamically in Phrase.js file on line 45
