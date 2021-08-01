@@ -22,7 +22,7 @@ class Game {
     });
 
     heartImages.forEach((heartImg) => {
-      heartImg.src = "../images/liveHeart.png";
+      heartImg.src = "images/liveHeart.png";
     });
 
     overlay.classList.remove("win");
@@ -97,7 +97,7 @@ class Game {
    * game if player is out
    */
   removeLife() {
-    heartImages[this.missed].src = "../images/lostHeart.png";
+    heartImages[this.missed].src = "images/lostHeart.png";
     this.missed++;
     if (this.missed === 5) {
       this.gameOver(true);
@@ -117,11 +117,7 @@ class Game {
         hidden++;
       }
     }
-    if (hidden === 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return hidden === 0;
   }
 
   /**
