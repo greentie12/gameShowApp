@@ -10,6 +10,8 @@ const letters = document.querySelectorAll(".letter");
 const heartImages = document.querySelectorAll("#scoreboard ol li img");
 const keys = document.querySelectorAll(".key");
 
+let game;
+
 // keydown - Event Listener for physical keyboard
 document.addEventListener("keydown", (e) => {
   for (let x = 0; x < keys.length; x++) {
@@ -32,8 +34,7 @@ keys.forEach((key) => {
   });
 });
 
-const game = new Game();
-
 btnReset.addEventListener("click", (e) => {
+  game = new Game();
   game.startGame();
 });

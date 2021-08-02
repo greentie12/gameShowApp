@@ -12,25 +12,23 @@ class Game {
    * Begins game by selecting a random phrase and displaying it to user
    */
   startGame() {
-    if (this.checkForWin()) {
-      phraseUl.innerHTML = "";
+    phraseUl.innerHTML = "";
 
-      keys.forEach((key) => {
-        key.disabled = false;
-        key.classList.remove("chosen");
-        key.classList.remove("wrong");
-        this.missed = 0;
-      });
+    keys.forEach((key) => {
+      key.disabled = false;
+      key.classList.remove("chosen");
+      key.classList.remove("wrong");
+      this.missed = 0;
+    });
 
-      heartImages.forEach((heartImg) => {
-        heartImg.src = "images/liveHeart.png";
-      });
+    heartImages.forEach((heartImg) => {
+      heartImg.src = "images/liveHeart.png";
+    });
 
-      overlay.classList.remove("win");
-      overlay.classList.remove("lose");
-    }
+    overlay.classList.remove("win");
+    overlay.classList.remove("lose");
 
-    this.activePhrase = game.getRandomPhrase();
+    this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
     overlay.style.display = "none";
   }
@@ -82,7 +80,7 @@ class Game {
 
     if (this.activePhrase.phrase.includes(letter)) {
       pressedKey.classList.add("chosen");
-      game.activePhrase.showMatchedLetter(letter);
+      this.activePhrase.showMatchedLetter(letter);
       if (this.checkForWin()) {
         //delayed gameOver() call
         this.gameOverDelay();
